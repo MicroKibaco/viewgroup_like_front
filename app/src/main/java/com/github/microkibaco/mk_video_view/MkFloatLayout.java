@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 
 
 /**
- * Created by chendx on 2019-10-23 标签控件
+ * Created by MicroKibaco on 2019-10-23 标签控件
  * <p>
  * 该 layout 使子 View 类似 CSS 中的 float:left 效果, 从左到右排列子 View 并自动换行。支持以下特性：
  * <ul>
@@ -111,17 +111,17 @@ public class MkFloatLayout extends ViewGroup {
             measuredChildCount = 0;
 
             /*
-             * 下一个子View的position x
+             * 下一个子View的内边距  x
              */
             int childPositionX = getPaddingLeft();
 
             /*
-             * 下一个子View的position y
+             * 下一个子View的内边距 y
              */
             int childPositionY = getPaddingTop();
 
-            // 子View的Right最大可达到的x坐标
-            int childMaxRight = widthSpecSize - getPaddingRight();
+            // 子child最大右边距
+            int childMaxRight = resultWidth - getPaddingRight();
 
             for (int i = 0; i < count; i++) {
                 if (mMaxMode == NUMBER && measuredChildCount >= mMaximum) {
@@ -212,10 +212,12 @@ public class MkFloatLayout extends ViewGroup {
                         break;
                     }
                 }
+                // 获取子view的对象
                 final View child = getChildAt(i);
                 if (child.getVisibility() == GONE) {
                     continue;
                 }
+                // 获取子view的参数
                 final LayoutParams childLayoutParams = child.getLayoutParams();
                 final int childWidthMeasureSpec = getChildMeasureSpec(widthMeasureSpec,
                         getPaddingLeft() + getPaddingRight(), childLayoutParams.width);

@@ -18,8 +18,8 @@
             android:layout_marginRight="12dp"
             android:layout_marginBottom="4dp"
             android:gravity="end"
-            app:aku_childHorizontalSpacing="12dp"
-            app:aku_childVerticalSpacing="12dp"
+            app:mk_childHorizontalSpacing="12dp"
+            app:mk_childVerticalSpacing="12dp"
             />
 
 </RelativeLayout>
