@@ -110,8 +110,14 @@ public class MkFloatLayout extends ViewGroup {
 
             measuredChildCount = 0;
 
-            // 下一个子View的position
+            /*
+             * 下一个子View的position x
+             */
             int childPositionX = getPaddingLeft();
+
+            /*
+             * 下一个子View的position y
+             */
             int childPositionY = getPaddingTop();
 
             // 子View的Right最大可达到的x坐标
@@ -131,6 +137,8 @@ public class MkFloatLayout extends ViewGroup {
                 if (child.getVisibility() == GONE) {
                     continue;
                 }
+
+                // 获取子View layout 参数
 
                 final LayoutParams childLayoutParams = child.getLayoutParams();
 
